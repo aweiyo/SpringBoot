@@ -6,8 +6,11 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,12 +21,16 @@ import org.springframework.web.servlet.ModelAndView;
 import cn.aweiyo.springboot.domain.User;
 import cn.aweiyo.springboot.dto.UserDTO;
 import cn.aweiyo.springboot.service.UserService;
+import cn.aweiyo.springboot.util.CacheUtil;
 
 @RestController
 public class UserController {
 
 	@Autowired
 	private UserService userService;
+
+	@Autowired
+	private RedisTemplate redisTemplate;
 
 	@RequestMapping
 	public String hello() {
@@ -134,23 +141,81 @@ public class UserController {
 	}
 
 	/**
-	 * 删除用户
-	 */
-
-	/**
-	 * 更新用户
-	 */
-
-	/**
 	 * 测试SpringBoot整合事物
 	 */
-	@RequestMapping(value = "testTransaction",method = RequestMethod.POST)
+	@RequestMapping(value = "testTransaction", method = RequestMethod.POST)
 	@ResponseBody
-	public String testTransaction(){
+	public String testTransaction() {
 		String resultCode = "";
 		try {
 			userService.testTransaction();
 			resultCode = "0";
+		} catch (Exception e) {
+			resultCode = "1";
+			e.printStackTrace();
+		}
+		return resultCode;
+	}
+
+	/**
+	 * 1、在https://github.com/dmajkic/Redis/downloads下载64位
+	 * 2、（windows下）找到刚下载的地址，redis-server.exe redis.conf
+	 * 测试SpringBoot整合Redis
+	 */
+	@RequestMapping(value = "testRedis", method = RequestMethod.POST)
+	@ResponseBody
+	public String testRedis() {
+		String key = "test";
+		ValueOperations<String, String> operations = redisTemplate.opsForValue();
+
+		// 缓存存在
+		boolean hasKey = redisTemplate.hasKey(key);
+		if (hasKey) {
+			String city = operations.get(key);
+
+			System.out.println("CityServiceImpl.findCityById() : 从缓存中获取了城市 >> " + city.toString());
+			return city;
+		}
+
+		// 从 DB 中获取城市信息
+		String city = "空城";
+
+		// 插入缓存
+		operations.set(key, city, 120, TimeUnit.SECONDS);
+		System.out.println("CityServiceImpl.findCityById() : 城市插入缓存 >> " + city.toString());
+
+		return city;
+	}
+	
+	/**
+	 * 模拟初始化网站缓存
+	 */
+	@RequestMapping(value = "initWebsiteCache", method = RequestMethod.GET)
+	@ResponseBody
+	public String initWebsiteCache() {
+//		String key = "test";
+//		ValueOperations<String, String> operations = redisTemplate.opsForValue();
+//
+//		// 缓存存在
+//		boolean hasKey = redisTemplate.hasKey(key);
+//		if (hasKey) {
+//			String city = operations.get(key);
+//
+//			System.out.println("CityServiceImpl.findCityById() : 从缓存中获取了城市 >> " + city.toString());
+//			return city;
+//		}
+//
+//		// 从 DB 中获取城市信息
+//		String city = "空城";
+//
+//		// 插入缓存
+//		operations.set(key, city, 120, TimeUnit.SECONDS);
+//		System.out.println("CityServiceImpl.findCityById() : 城市插入缓存 >> " + city.toString());
+//
+//		return city;
+		String resultCode = "0";
+		try {
+			CacheUtil.initYpWebsiteConfigCache();
 		} catch (Exception e) {
 			resultCode = "1";
 			e.printStackTrace();
