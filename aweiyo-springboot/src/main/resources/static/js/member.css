@@ -1,0 +1,364 @@
+/*
+* @ description: 网站的会员栏目样式，登陆注册、找回密码、会员中心页面引用
+* @ author: Spring
+* @ update: Spring(2014.10.27)
+*/
+
+/*=============================================================== common CSS ===============================================================*/
+body{ font-size:12px;}
+
+input:-webkit-autofill, 
+textarea:-webkit-autofill, 
+select:-webkit-autofill{background-color: transparent;background-image: none;color: rgb(0, 0, 0);}
+/*splite*/
+.login_btn{background:url(../images/icon.png) no-repeat 0 0;}
+.icon-ca-qq,
+.icon-ca-weibo,
+.icon-ca-weixin{background:url(../img/icons.png) no-repeat 0 0;}
+.icon-elem{background-image:url(../img/icons-elem.png);}
+
+.icon-home{width: 12px;height: 12px; background-position: -35px -10px; vertical-align: -1px;}
+	a:hover .icon-home{background-position: -35px -34px;}
+
+.header-member .content{background: #ffffff url(../img/bg_member_header.png) no-repeat 100% 0;}
+
+.member .form .user .text{background-image: url(../img/icon-user.png);}
+.member .form .password .text,
+.member .form .password2 .text{background-image: url(../img/icon-password.png);}
+.member .form .icon-user{position: absolute;left: 10px;top: 50%; width: 13px;height: 12px;margin: 0;margin-top: -6px; background: url(../img/icon-user.png) no-repeat 0 0;}
+.member .form .icon-password{position: absolute;left: 10px;top: 50%; width: 10px;height: 14px;margin: 0;margin-top: -7px; background: url(../img/icon-password.png) no-repeat 0 0;}
+.register .form .user.onCorrect .text,
+.register .form .password.onCorrect .text,
+.register .form .password2.onCorrect .text{background-image: url(../img/icon-oncorrect.png);}
+.register .form .user.onError .text,
+.register .form .password.onError .text,
+.register .form .password2.onError .text{background-image: url(../img/icon-onError.png);}
+.findPwd .form .user.onCorrect .text,
+.findPwd .form .password.onCorrect .text,
+.findPwd .form .password2.onCorrect .text{background-image: url(../img/icon-oncorrect.png);}
+.findPwd .form .user.onError .text,
+.findPwd .form .password.onError .text,
+.findPwd .form .password2.onError .text{background-image: url(../img/icon-onError.png);}
+.menu .mt .title i,
+.menu .mc dt i,
+.menu .mc dd i{background-image: url(../img/icons-member.png);background-repeat: no-repeat;}
+
+.progress-findPwd .stepImg{background: url(../img/progress-findPwd.png) no-repeat;}
+.progress-findPwd2 .stepImg{background: url(../img/progress-findPwd2.png) no-repeat;}
+/*icons*/
+.icon-current{display: inline-block; width: 42px;height: 38px;background: url(../img/icon-currect.png) no-repeat;}
+.icon-worn{display: inline-block; width: 42px;height: 36px;background: url(../img/worn.png) no-repeat;}
+.replenish .file,
+.file-delete{background-image: url(../img/icon-products.png);background-repeat: no-repeat;}
+/*btns*/
+.btn-yanzheng{border: 1px #ddd solid;background: #f8f8f8;height: 40px;display: inline-block;zoom: 1;vertical-align: top;line-height: 42px;text-align: center;padding: 0px 8px;}
+.btn-register,
+.btn-login,
+.btn-fpwd{display: block; height: 50px;line-height: 50px;text-align: center;font-size: 16px;color: #fff;overflow: hidden; border-radius: 4px;}
+.btn-register,
+.btn-login,
+.btn-fpwd{background: #35b3ed;transition: background-color .4s linear;}
+.btn-register:hover,
+.btn-login:hover,
+.btn-fpwd:hover{background: #53c5f9;color: #ffffff;}
+.btn-login-disabled{background-color: #dddddd;color: #666666;}
+.btn-login-disabled:hover{background-color: #dddddd;color: #666666;cursor: default;}
+.btn-register-disabled{background-color: #dddddd;color: #666666;}
+.btn-register-disabled:hover{background-color: #dddddd;color: #666666;cursor: default;}
+
+.yzmimg,
+.yzmimg a{display: block;}
+/*common*/
+body{background: url(../img/bg_containner.png);}
+
+.w,
+.content,
+.ws{width:1210px;margin-left:auto;margin-right:auto;}
+.ws{width:990px;}
+
+.header,
+.banner,
+.mainner,
+.containner,
+.footer,
+.wf{width:100%; min-width:1210px;}
+
+.header-member{height: auto;overflow: hidden;}
+.header-member .content{height: 100%;}
+.header-member .logo{float: inherit;margin: 32px 30px 32px 0;}
+.header-member .colTitle{height: 66px; border-top: 2px solid #dfdfdf; margin-bottom: 10px;}
+.header-member .colTitle h2{float: left; border-top: 2px solid #158e36; margin-top: -2px; font-size:18px; padding:20px 0px; color:#333;}
+.header-member img{vertical-align: middle;}
+
+.member .content{min-height:295px; _height:295px;background-color: transparent; overflow:hidden;}
+
+.member .form dl{margin-bottom: 14px;}
+.member .form dt,
+.member .form dd{float: left;height: 42px;line-height: 42px;}
+.member .form dd{position: relative; width: auto;max-width: 343px;}
+.member .form dt em{padding: 0 3px;}
+
+.member .textl,
+.member .textm,
+.member .texts,
+.member .select{border: 1px solid #dadada; width: 270px;height: 30px;padding: 5px 10px;line-height: 30px;font-family: "microsoft yahei"; font-size: 14px;color: #999999;}
+.member .textm{width: 150px;}
+.member .texts{width: 89px;}
+.member .select{/*height: auto;*/height: 50px; /*padding: 8px 5px;*/padding: 8px 10px;}
+
+.register .agreement, 
+.register .submit,
+.cooperationAccount{margin: 25px 0;text-align: left;}
+
+.cooperationAccount{margin-top:20px;line-height: 20px;}
+.cooperationAccount .dt{color: #888888;}
+.cooperationAccount .dd a{margin: 0 2px;}
+
+.member .yzmimg{float: left;margin-right: 8px;}
+.member .yzmimg,
+.member .yzmimg a{display: block;}
+.member .yzmimg a{border: 1px solid #d9d9d9;/*width: 96px;*/height: 40px; padding: 0 12px; background-color: #ffffff; line-height: 40px;text-align: center;overflow: hidden;}
+.member .yzmimg img{vertical-align: middle;}
+.member .form .changeCode{float: left; height: 36px; line-height: 18px;}
+
+.member .form .tipbar{position: absolute;left: 12px;top: 3px; display: none; border: 1px solid #e7e7e7;margin-left: 12px; padding: 8px 7px;min-width: 160px;width: auto; max-height: 32px; border-radius: 2px; line-height: 16px; background-color: #ffffff;color: #999999;}
+.member .form .tipbar-big{width: 250px; height: 36px;margin-top: 0;line-height: 18px;}
+.member .form .tipbar:before{position: absolute;left: -12px;top: 50%; display: block;width: 12px;height: 14px; margin-top: -7px;content:""; background: url(../img/arrow-tipbar.png) no-repeat;}
+.member .form .onError .tipbar:before{background-image: url(../img/arrow-tipbar-onError.png);}
+.member .form .onFocus .tipbar,
+.member .form .onError .tipbar{display: inline-block;}
+.member .form .onError .text{border-color: #ff0000;}
+.member .form .onError .tipbar{border-color: #ffbdbf;background-color: #ffebec;color: #ff0000;}
+.member .form .onFocus .text,
+.member .form .text:focus{border-color: #9aaef6;outline: none; box-shadow: 0 0 3px 1px rgba(88,116,216,.4);}
+.member .form .text{background-position: 97% 50%;background-repeat: no-repeat;transition: all ease-out .3s;}
+
+.member .form .btn-yanzheng{height: 36px;line-height: 36px;}
+
+/*=============================================================== login/register/findPwd 登录、注册、找回密码 ===============================================================*/
+/*---register---*/
+.mainner-register{background-color: #f9f9f9;}
+
+.header-brief{padding-top: 35px;border:none;}
+.header-brief .logo{float: left;}
+.header-brief .more{float: right;line-height: 50px;font-size: 14px;}
+
+.header-black{position: relative; height: 76px; background-color: rgba(60,68,84,1);z-index: 99;}
+.header-black .logo{float: left;padding: 18px 0; max-width: 250px;height: 40px; overflow: hidden;}
+.header-black .logo img{vertical-align: middle;}
+.header-black .nav{float: right;height: 76px;}
+.header-black .menu{position: relative; float: left;margin: 0;padding: 0;}
+.header-black .menu .menu-a{padding: 0;margin: 0 0 0 30px; line-height: 76px;text-align: center; color: #999; transition: color .3s ease-in-out;}
+.header-black .menu .menu-a:hover{color: #009ce1;}
+.header-black .more{float: right;padding: 20px 0;}
+.header-black .more .sign{margin-left: 15px;color: #999999;}
+.header-black .more .sign a{color: #888888;}
+.header-black .more .sign a:hover{color: #009ce1;}
+.header-black .btn-demo{float: right;margin-top: 20px;}
+
+.register .text{padding-left: 7px;padding-right: 7px; font-size: 14px;}
+.register .textl{width: 330px;}
+.register .textm{width: 230px;}
+.register .texts{width: 90px;}
+.register .tips{float: right;width: 250px;}
+.register .section{float: inherit; width: 350px;margin: 0 auto;}
+.register .aside{float: inherit; width: 300px;margin: 0 auto;}
+.register .content{padding: 60px 0 40px;}
+.register .register-title{margin-bottom: 20px;text-align: center;}
+.register .register-title h2{line-height: 1.5; font-size: 21px;}
+.register .register-title p{color: #999999;}
+.register .yzmimg{margin-right: 0;}
+.register .form .item-code-button{height: 40px; margin: 1px 0 0 -110px;border-left: 1px solid #dadada;}
+.register .form .item-code-button .yzmimg a{border: none;}
+.register .form .item-code-button .btn-yanzheng{height: 40px;border: none;background: none; line-height: 40px;font-size: 16px;}
+
+.register .submit{padding-left: 0;}
+.register .agreement input{margin-right: 2px; vertical-align: middle;} 
+
+.register .tips p{min-height: 27px;}
+.register .btn-gray{border: 1px solid #dcdcdc;border-radius: 2px;padding: 3px 10px;background: #f8f8f8;content: #555555;}
+.register .btn-gray:hover{background-color: #f5f5f5;}
+
+.member .form-register .tipbar{white-space: nowrap;}
+.form-register .tipNotNull{position: absolute;top: 0;left: -358px;height: 50px;line-height: 50px; font-size: 14px;}
+/*---banner 幻灯片---*/
+.register .banner-static{position: relative;height: auto;}
+.register .bannerBox{position: absolute;top: 0;left: 0; width: 100%;height: auto;}
+.register .bannerBox .currPic{position: relative; width: 100%;height: 100%;overflow: hidden;}
+.register .bannerBox .currPic a{position: absolute;display: block;width: 100%; height: 100%;background-position: 50% 0;}
+.register .bannerBox .currPic a img{width:100%;height:100%;}
+
+/*用户注册协议*/
+.alert-agreement{width: 800px; margin-left: -400px;margin-top: -400px;}
+.alert-agreement .freeData{height: 400px; overflow: auto; line-height: 1.5;text-align: left;font-size: 12px;color: #ea5c08；}
+.alert-agreement .action{padding: 5px 0; text-align: center;}
+.alert-agreement .action .btns{margin: 0 20px;}
+.alert-agreement .freeData strong{color: #333;}
+
+/*使用合作账户登陆*/
+.entryft{margin-bottom:16px;font-size: 14px;}
+.entryft{margin-top:20px;line-height: 20px;}
+.entryft .dt{color: #888888;}
+.entryft .dd a{margin: 0 2px;}
+/*register succ 注册成功*/
+.register .msg{padding:20px; margin-bottom:20px;}
+.register .msg .dt{margin-bottom: 15px;font-size: 16px;}
+.register .msg .icon-ok{display: inline-block;width: 35px;height: 35px; background:url(../img/icon-currect.png) no-repeat 0 0%; margin-right: 5px;vertical-align: middle;}
+.register .msg .dd{margin-bottom:15px;color: #333333;}
+.register .msg .dd span{color:#999; padding:0px 20px;}
+.register .msg-succ{height: 200px;text-align: center;}
+.register .msg-succ .ft .btnf{height: 26px;line-height: 26px; margin: 0 5px; padding: 0 20px; border-color: #8fc221; background-color: #8fc221; font-size: 12px; color:#ffffff;}
+
+.register .taber .hd{height: 46px;padding: 0 102px;margin-bottom: 50px; border-bottom: 1px solid #dddddd;}
+.register .taber .bd{}
+.register .taber .tabNav{width: 167px;height: 45px;border: 1px solid #ffffff;border-bottom-color: #dddddd; margin-right: 0;line-height: 45px;font-size: 18px;color: #999999;}
+.register .taber .tabNav a{color: #999999;}
+.register .taber .tabNav.on{border: 1px solid #dddddd;border-bottom-color: #ffffff;background-color: #ffffff; color: #333333;}
+.register .taber .tabNav.on a{color: #333333;}
+
+.register_success1 .title{font-size: 18px;}
+.register_success1 .icon-current{margin-right: 5px; vertical-align: -11px;}
+
+.footer-register{}
+.footer-register .bottom{padding: 20px 0; line-height: 20px; text-align: center; color: #999;}
+.footer-register .bottom a{color: #999;}
+.footer-register .bottom a:hover{color: #5874d8;}
+
+.reg-msg{margin: 0 auto;padding: 150px;text-align: center;}
+.reg-msg h2{border-bottom: 1px solid #dcdcdc;margin-bottom: 20px;padding-bottom: 20px;}
+.icon-reg-ok{display: inline-block;width: 42px;height: 42px;vertical-align: middle;background: url(../images/icon-reg-ok.png) no-repeat;}
+.reg-msg p{padding: 5px 0;line-height: 1.5;}
+.reg-msg .num{padding: 0 8px;font-family: "microsoft yahei"; font-size: 22px;color: #f53707;}
+.reg-msg .txt{font-size: 26px;}
+/*---login---*/
+.mainner-login{background-color: #f9f9f9;}
+.mainner-login .content{padding: 178px 0 138px;}
+
+.login .section{float:right; width:342px;min-height: 349px; padding: 38px; background-color: #ffffff; font-size: 14px; overflow: hidden;}
+.login .aside{float:left; width: 780px;min-height: 425px;}
+.login .aside img{display: block;}
+
+.login .textl{width: 320px;}
+.login .textm{width: 230px;}
+.login .texts{width: 90px;}
+.login .form dl{margin-bottom: 20px;position: relative;}
+.login .form dd{position: static; margin-right: 0;}
+
+.login .login-logo{text-align: center; overflow: hidden;}
+.login .login-logo img{max-width: 100%; height: auto; vertical-align: middle;}
+.login .login-logo .logo-text{height: 52px; padding: 10px 0; line-height: 52px; font-size: 16px;color: #666;}
+
+.login .form .tipbar{position: absolute;top: 40px;left: 0;width: 282px; height: 18px; padding: 2px 7px;border: 1px solid #d9d9d9; margin: 0; line-height: 18px; background-color: #f7f7f7;color: #999999;font-size: 12px; overflow: hidden;z-index: 2;}
+.login .form .onFocus .tipbar,
+.login .form .onError .tipbar{display: block;}
+.login .form .onError .text{border-color: #ff0000;}
+.login .form .onError .tipbar{border-color: #ffbdbf;color: #ff0000;}
+.login .form .onFocus .text,
+.login .form .text:focus{outline: none;}
+.login .form .text{background-position: 3% 50%;background-repeat: no-repeat;transition: all ease-out .3s;}
+.login .form .onError .tipbar{border-color: #ffbdbf;background-color: #ffebec;color: #ff0000;}
+
+.login .form .submit{margin-top: 0;padding-left: 0; /*padding-top: 20px;*/}
+.login .loginAuto{text-align: right; padding-top: 15px;}
+.login .loginAuto input{vertical-align: -2px;_vertical-align: -1px;margin-right: 2px;}
+
+.footer-login{position: absolute;left: 0;bottom: 0; width: 100%; text-align: center;}
+.footer-login .bottom{padding: 10px 0;line-height: 20px;color: #fff;}
+.footer-login .siteLink a{color: #fff;}
+
+.login-box{position: absolute;left: 50%;top: 50%; width: 352px;margin: -300px 0 0 -176px;}
+.login-box .form{padding: 27px;padding-bottom: 15px; background-color: #fff;}
+.login-box .form .text{width: 256px; padding-left: 30px; font-size: 12px;}
+.login-box .login-ft{padding: 27px; background-color: #687083\9;background-color: rgba(104,112,131,.9);filter: alpha(opacity=90);}
+.login-box .login-ft .btn{height: 48px;line-height: 48px; background-color: transparent; color: #eee; border: 1px solid #ccc;}
+.login-box .login-ft .btn:hover{background-color: #bbb;}
+/*---login-error---*/
+
+/*---findPwd 找回密码---*/
+.findPwd .content{padding: 20px 0;}
+.findPwd .hd{border-bottom: 1px solid #a4e0e0; padding: 5px 0;}
+.findPwd .bd{padding-top: 50px; min-height: 200px;}
+/*progress-findPwd 找回密码进度条*/
+.progress-findPwd,.progress-findPwd2{padding:25px 0;}
+.progressBar{width: 732px;margin: 0 auto;text-align:center;}
+.progressBar2{width: 810px;margin: 0 auto;text-align:center;}
+.progressBar .stepImg,
+.progressBar .steptxt,.progressBar2 .stepImg,
+.progressBar2 .steptxt{margin: 0 auto; width: 100%;}
+.progressBar .steptxt,.progressBar2 .steptxt{height: 20px;line-height: 20px;}
+.progressBar .stepImg,.progressBar2 .stepImg{height: 42px;}
+.progressBar .steptxt li{float: left; width: 183px;color: #999999;font-family: "microsoft yahei";font-size: 14px;}
+.progressBar2 .steptxt li{float: left; width: 270px;color: #999999;font-family: "microsoft yahei";font-size: 14px;}
+.step1 .steptxt li.s1,
+.step1a .steptxt li.s1,
+.step2 .steptxt li.s1,
+.step2 .steptxt li.s2,
+.step2a .steptxt li.s1,
+.step2a .steptxt li.s2,
+.step3 .steptxt li.s1,
+.step3 .steptxt li.s2,
+.step3 .steptxt li.s3,
+.step3a .steptxt li.s1,
+.step3a .steptxt li.s2,
+.step3a .steptxt li.s3,
+.step4 .steptxt li.s1,
+.step4 .steptxt li.s2,
+.step4 .steptxt li.s3,
+.step4 .steptxt li.s4{color: #333;}
+.step1 .stepImg,.step1a .stepImg{background-position: 50% 0;}
+.step2 .stepImg,.step2a .stepImg{background-position: 50% -44px;}
+.step3 .stepImg,.step3a .stepImg{background-position: 50% -88px;}
+.step4 .stepImg{background-position: 50% -132px;}
+
+.findPwd .txt{margin-bottom: 20px;text-align: center; color: #333;font-size: 20px;}
+.findPwd .form{width: 342px;margin: 0 auto;}
+.findPwd .form dl{margin-bottom: 20px;position: relative;}
+.findPwd .form dd{margin-right: 0;width: auto;max-width: 342px;}
+.findPwd .form .captcha .tipbar,
+.findPwd .form .mobileCode .tipbar{width: 87px;}
+
+.findPwd .textl{width: 320px;}
+.findPwd .textm{width: 230px;}
+.findPwd .texts{width: 90px;}
+.findPwd .select{width: 342px;}
+
+/*.findPwd .form .item-code-button{height: 40px; margin: 5px 0 0 -110px;border-left: 1px solid #dadada;}
+.findPwd .form .item-code-button .yzmimg a{border: none;line-height: 36px; font-size: 16px;color: #999999;}
+.findPwd .form .item-code-button .btn-yanzheng{height: 40px;border: none;background: none; line-height: 40px;font-size: 16px;}
+*/
+.findPwd .form .item-code-button{position: absolute; right: 0;top: 0;}
+.findPwd .form .item-code-button .yzmimg{margin: 0;}
+.findPwd .form .item-code-button .btn-yanzheng{display: block; height: 40px; line-height: 40px; font-size: 16px;color: #999; border-left: 1px solid #dadada;}
+
+.findPwd .submit{padding-left: 0;margin: 25px 0;text-align: left;}
+.findPwd .submit .btns{height: 30px;line-height: 30px;font-size: 14px;}
+
+.findPwd .form-findPwd1{width: 342px;}
+.findPwd .form-findPwd1 dt{width: 140px;}
+.findPwd .form-findPwd1 dd{max-width: 448px;}
+.findPwd .form-findPwd1 .submit{padding-left: 0;}
+.findPwd .btns{/*margin-right: 10px;*/height: 30px;line-height: 30px;font-size: 14px;}
+
+.form-findPwd1 .mobile,
+.form-findPwd1 .mobileCode,
+.form-findPwd1 .submit-mobile,
+.form-findPwd1-mobile .email,
+.form-findPwd1-mobile .submit-email{display: none;}
+.form-findPwd1-mobile .mobile,
+.form-findPwd1-mobile .mobileCode,
+.form-findPwd1-mobile .submit-mobile{display: block;}
+
+.findPwd .form-findPwd2,
+.findPwd .form-findPwd4{width: auto;text-align: center;}
+
+.findPwd .form-findPwd5{width: 590px;}
+.findPwd .form-findPwd5 .worn{line-height: 42px;text-align: center;}
+.findPwd .form-findPwd5 .worn .icon-worn{margin-right: 15px; vertical-align: middle;}
+/*密码强度提示*/
+.icon_psw{background:url(../img/pwdstrength.gif) center no-repeat; padding:0px 56px; zoom:1;}
+.psw_01{background-position:0px 0px;}
+.psw_02{background-position:0px -15px;}
+.psw_03{background-position:0px -30px;}
+
+
+/*=============================================================== memberCenter 会员中心栏目 ===============================================================*/
